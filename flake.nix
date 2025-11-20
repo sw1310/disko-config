@@ -1,4 +1,5 @@
 # /mnt/etc/nixos/flake.nix
+# Follow instructions at https://nixos.asia/en/nixos-install-disko
 {
   inputs = {
     # NOTE: Replace "nixos-25.05" with that which is in system.stateVersion of

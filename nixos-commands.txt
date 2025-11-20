@@ -1,0 +1,18 @@
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /temp/disko-config.nix
+nixos-generate-config --no-filesystems --root /mnt
+cp /tmp/disko-config.nix /mnt/etc/nixos
+
+vi /mnt/etc/nixos/configuration.nix
+#Add the following lines to the configuration.nix file imports section
+#
+#imports =
+#
+#  ./hardware-configuration.nix
+#  "${builtins.fetchTarball} "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
+#  ./disko-config.nix
+#];
+
+# edit additions configuration.nix file options.  Then...
+
+nixos-install
+reboot
